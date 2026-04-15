@@ -1,55 +1,33 @@
-// Write your solution in this file!
-// 🌍 GLOBAL SCOPE VARIABLES
-const restaurantName = "Flatburger";
+// GLOBAL SCOPE VARIABLES
 
-const burgers = ["Classic Burger", "Cheese Burger", "Veggie Burger"];
-const milkshakes = ["Vanilla Shake", "Chocolate Shake", "Strawberry Shake"];
+// burgers must ONLY have these two items
+const burgers = ["Hamburger", "Cheeseburger"];
 
-// 🍔 FUNCTION: Display Burger Menu (Function Scope)
-function showBurgerMenu() {
-  let menu = `${restaurantName} Burger Menu:\n`; // function-scoped variable
+// featuredDrink must be let and a string
+let featuredDrink = "Strawberry Milkshake";
 
-  for (let i = 0; i < burgers.length; i++) {
-    menu += `${i + 1}. ${burgers[i]}\n`;
-  }
 
-  console.log(menu);
+// FUNCTION: addBurger
+function addBurger() {
+  // function-scoped variable using const
+  const newBurger = "Flatburger";
+
+  // add to burgers array
+  burgers.push(newBurger);
 }
 
-// 🥤 FUNCTION: Display Milkshake Menu (Function Scope)
-function showMilkshakeMenu() {
-  let menu = `${restaurantName} Milkshake Menu:\n`;
 
-  for (let i = 0; i < milkshakes.length; i++) {
-    menu += `${i + 1}. ${milkshakes[i]}\n`;
-  }
+// IF STATEMENT (must be exactly true)
+if (true) {
+  // block-scoped variable using const
+  const anotherNewBurger = "Maple Bacon Burger";
 
-  console.log(menu);
+  // add to burgers array
+  burgers.push(anotherNewBurger);
 }
 
-// ⭐ FUNCTION: Feature a Burger (Block Scope)
-function featureBurger(index) {
-  if (index >= 0 && index < burgers.length) {
-    let selectedBurger = burgers[index]; // block-scoped
-    console.log(`🔥 Featured Burger: ${selectedBurger}`);
-  } else {
-    console.log("Invalid burger selection");
-  }
+
+// FUNCTION: changeFeaturedDrink
+function changeFeaturedDrink() {
+  featuredDrink = "The JavaShake";
 }
-
-// ⭐ FUNCTION: Feature a Milkshake (Block Scope)
-function featureMilkshake(index) {
-  if (index >= 0 && index < milkshakes.length) {
-    let selectedShake = milkshakes[index]; // block-scoped
-    console.log(`🥤 Featured Milkshake: ${selectedShake}`);
-  } else {
-    console.log("Invalid milkshake selection");
-  }
-}
-
-// 🚀 RUN THE PROGRAM
-showBurgerMenu();
-showMilkshakeMenu();
-
-featureBurger(1);     // Cheese Burger
-featureMilkshake(2);  // Strawberry Shake
